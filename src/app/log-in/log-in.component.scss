@@ -1,6 +1,11 @@
 .container{
     background-image: url('/assets/img/Fakeflix_auth_bg.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 10px;
     height: 100vh;
@@ -122,6 +127,10 @@
 
 @media (max-width: 768px) {
     
+    .container{
+        flex-direction: column;
+    }
+
     .ff-logo {
         img {
             width: 100px;
@@ -158,7 +167,9 @@
 
 
 @media (max-width: 1024px) {
-    
+    .container{
+        flex-direction: column;
+    }
 
     .ff-logo {
         img {
