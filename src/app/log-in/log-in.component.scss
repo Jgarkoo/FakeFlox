@@ -124,48 +124,6 @@
     }
 }
 
-
-@media (max-width: 768px) {
-    
-    .container{
-        flex-direction: column;
-    }
-
-    .ff-logo {
-        img {
-            width: 100px;
-        }
-    }
-
-    .signIn {
-        top: 15% !important;
-        left: 10% !important;
-        width: 80% !important; 
-        padding: 20px !important;
-        margin: 10px 0 !important; 
-        text-align: center !important; 
-
-        input {
-            padding: 10px !important;
-            margin-top: 10px !important; 
-        }
-
-        button {
-            padding: 15px !important; 
-            font-size: 14px !important; 
-        }
-
-        #email-inp {
-            margin-top: 30px !important; 
-        }
-
-        #signin-btn {
-            margin-top: 20px !important; 
-        }
-    }
-}
-
-
 @media (max-width: 1024px) {
     .container{
         flex-direction: column;
