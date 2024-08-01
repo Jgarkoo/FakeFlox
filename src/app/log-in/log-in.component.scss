@@ -110,6 +110,7 @@
             a{
                 color: red;
                 text-decoration: none;
+                cursor: pointer;
                 &:hover{
                     color: rgb(190, 0, 0);
                     font-size: 15px;
@@ -121,6 +122,66 @@
             color: orange;
             font-size: 15px;
         }
+        .signUp{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            margin: auto;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.882);
+            padding: 35px;
+            left: 35%;
+            position: fixed;
+            top: 5%;
+            h1{
+                text-align: center;
+            }
+            input{
+                width: 100%;
+                border: 2px solid transparent;
+                border-radius: 5px;
+                margin-top: 20px;
+                background-color: rgb(79, 79, 79);
+                color: white;
+                padding: 15px;
+                &::placeholder{
+                    color: rgb(197, 194, 194);
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+            button{
+                margin-top: 30px;
+                margin-bottom: 20px;
+                border: none;
+                background-color: red; 
+                color: white; 
+                &:hover{
+                    background-color: rgb(228, 16, 16);
+                    transition: 0.3s;
+                }
+            }
+            p{
+                margin: auto;
+                color: grey;
+                border: 1px solid grey;
+                border-bottom: none;
+                border-left: none;
+                border-right: none;
+                padding: 20px 45px;
+                a{
+                    color: red;
+                    text-decoration: none;
+                    cursor: pointer;
+                    &:hover{
+                        color: rgb(190, 0, 0);
+                        font-size: 15px;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }   
     }
 }
 
@@ -135,7 +196,7 @@
         }
     }
 
-    .signIn {
+    .signIn, .signUp {
         top: 15% !important;
         left: 10% !important;
         width: 80% !important; 

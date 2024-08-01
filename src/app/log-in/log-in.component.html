@@ -1,30 +1,41 @@
 <div class="container">
-    <form [formGroup]="logInForm">
-        <div class="ff-logo">
-            <img src="https://cdn.jsdelivr.net/gh/Th3Wall/assets-cdn/Fakeflix/Fakeflix_logo.png" alt="Fakeflix_logo" [routerLink]="['./login']">
-        </div>
-        <div class="signIn">
-            <h1>
-                Sign In
-            </h1>
-            <input type="email" placeholder="E-mail" id="email-inp" formControlName="email" 
-            [ngStyle]="{'border-bottom-color': !email.touched ? '' : 'orange'}">
-            <div *ngIf="email.invalid && email.touched" class="error">
-                <h5>
-                    Please enter a valid email address.
-                </h5>
-              </div>
-            <input type="password" placeholder="Password" id="pass-inp" formControlName="password" 
-            [ngStyle]="{'border-bottom-color': !password.touched ? '' : 'orange'}">
-            <div *ngIf="password.invalid && password.touched" class="error">
-                <h5>
-                    The password should have a length between 6 and 30 characters.
-                </h5>
-            </div>        
-            <button id="signin-btn">Sign in</button>
-            <button id="signin-wg-btn"><h3>&#64;</h3>Sign in with Google</button>
-            <button id="signin-anon-btn">Sign in anonymously</button>
-            <h4 id="reg">Haven't you registered yet? <a href="">Sign Up</a></h4>
-        </div>        
-    </form>
+  <form [formGroup]="authForm">
+    <div class="ff-logo">
+      <img src="https://cdn.jsdelivr.net/gh/Th3Wall/assets-cdn/Fakeflix/Fakeflix_logo.png" alt="Fakeflix_logo" [routerLink]="['./login']">
+    </div>
+      <div class="signIn">
+        <ng-template #signInContent>
+          <h1>
+              Sign In
+          </h1>
+          <input type="email" placeholder="E-mail" id="email-inp" formControlName="email" 
+          [ngStyle]="{'border-bottom-color': !email.touched ? '' : 'orange'}">
+          <div *ngIf="email.invalid && email.touched" class="error">
+              <h5>
+                Please enter a valid email address.
+              </h5>
+            </div>
+          <input type="password" placeholder="Password" id="pass-inp" formControlName="password" 
+          [ngStyle]="{'border-bottom-color': !password.touched ? '' : 'orange'}">
+          <div *ngIf="password.invalid && password.touched" class="error">
+              <h5>
+                The password should have a length between 6 and 30 characters.
+              </h5>
+          </div>        
+          <button id="signin-btn">Sign in</button>
+          <button id="signin-wg-btn"><h3>&#64;</h3>Sign in with Google</button>
+          <button id="signin-anon-btn">Sign in anonymously</button>
+          <h4 id="reg">Haven't you registered yet? <a (click)="toggleForm()">Sign Up</a></h4>
+        </ng-template>
+          <div class="signUp" *ngIf="signIn else signInContent">
+            <h1>Sign Up</h1>
+            <input type="text" placeholder="Your name" formControlName="name">
+            <input type="email" placeholder="E-mail" formControlName="email">
+            <input type="password" placeholder="Password" formControlName="password">
+            <input type="password" placeholder="Repeat your password" formControlName="confirmPassword">
+            <button type="submit">Sign Up</button>
+            <p>Already have an account? <a (click)="toggleForm()">Sign In</a></p>
+          </div>
+      </div>        
+  </form>
 </div>
