@@ -24,7 +24,7 @@
           </div>        
           <button id="signin-btn">Sign in</button>
           <button id="signin-wg-btn"><h3>&#64;</h3>Sign in with Google</button>
-          <button id="signin-anon-btn">Sign in anonymously</button>
+          <button id="signin-anon-btn" [routerLink]="['/home']">Sign in anonymously</button>
           <h4 id="reg">Haven't you registered yet? <a (click)="toggleForm()">Sign Up</a></h4>
         </ng-template>
           <div class="signUp" *ngIf="signIn else signInContent">
@@ -33,7 +33,7 @@
             <input type="email" placeholder="E-mail" formControlName="email">
             <input type="password" placeholder="Password" formControlName="password">
             <input type="password" placeholder="Repeat your password" formControlName="confirmPassword">
-            <button type="submit">Sign Up</button>
+            <button type="submit" [routerLink]="['/home']">Sign Up</button>
             <p>Already have an account? <a (click)="toggleForm()">Sign In</a></p>
           </div>
       </div>        
